@@ -1,11 +1,11 @@
 {
     "name": "Lab8-Starter",
     "short_name": "Brooke Truong",
-    "description": "",
+    "description": "Offline viewing for recipe cards",
     "start_url": "",
     "display": "standalone",
-    "background_color": "FFFFFF",
-    "theme_color": "FFFFFF",
+    "background_color": "#FFFFFF",
+    "theme_color": "#FFFFFF",
     "icons": [
       {
         "src": "assets/images/icons/icon-192x192.png",
