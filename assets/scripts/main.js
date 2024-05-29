@@ -121,12 +121,12 @@ async function getRecipes() {
   //            resolve() method.
   // A10. TODO - Log any errors from catch using console.error
   // A11. TODO - Pass any errors to the Promise's reject() function
-    RECIPE_URLS.forEach(async (url, index) => {
+    RECIPE_URLS.forEach(async (url) => {
       try{
         let response = await fetch(url);
         let data = await response.json();
         recipes.push(data);
-        if (index === RECIPE_URLS.length - 1){
+        if (recipes.length === RECIPE_URLS.length){
           saveRecipesToStorage(recipes);
           resolve(recipes);
         }
