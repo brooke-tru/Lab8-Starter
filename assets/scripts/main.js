@@ -58,7 +58,7 @@ function initializeServiceWorker() {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./sw.js')
         .then(registration => {
-          console.log('Successful registration: ', registration);
+          console.log('Successful registration: ', registration.scope);
         })
         .catch(error => {
           console.error('Failed registration: ', error);
