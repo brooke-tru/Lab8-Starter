@@ -57,11 +57,11 @@ function initializeServiceWorker() {
   if ('serviceWorker' in navigator){
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./sw.js')
-        .then(registration => {
+        .then((registration) => {
           console.log('Successful registration: ', registration.scope);
         })
-        .catch(error => {
-          console.error('Failed registration: ', error);
+        .catch((error) => {
+          console.log('Failed registration: ', error);
         });
     });
   }
@@ -123,9 +123,9 @@ async function getRecipes() {
   // A11. TODO - Pass any errors to the Promise's reject() function
     RECIPE_URLS.forEach(async (url) => {
       try{
-        let response = await fetch(url);
-        let data = await response.json();
-        recipes.push(data);
+        const response = await fetch(url);
+        const recipe = await response.json();
+        recipes.push(recipe);
         if (recipes.length === RECIPE_URLS.length){
           saveRecipesToStorage(recipes);
           resolve(recipes);
